@@ -1,54 +1,30 @@
-# NFL Game Arrest Prediction Project
-
-This project analyzes historical NFL game data to identify factors associated with fan arrest levels and builds machine learning models to predict arrest risk categories for games.
-
-The work was completed as a final project for a university data science course and demonstrates practical experience in data cleaning, feature engineering, exploratory analysis, and model training.
+# NFL Game Arrest Prediction (2011–2015)
 
 ## Project Goal
-The goal of this project is to determine whether game context—such as rivalry matchups, score differences, and game outcomes—can help predict whether a game will have low, medium, or high arrest counts.
+Predict arrest risk levels (Low, Medium, High) at NFL games using game context such as rivalry matchups, score differences, and game outcomes.
 
 ## Dataset
-The dataset contains NFL game arrest data from 2011–2015, with each record representing a single game. Key variables include:
+NFL fan arrest data (2011–2015) sourced from Kaggle, where each row represents a single NFL game and includes team info, scores, and arrest counts.
 
-- Teams playing
-- Game scores
-- Overtime indicator
-- Division/rivalry flags
-- Number of fan arrests
+## Workflow
+Data Cleaning → Exploratory Analysis → Feature Engineering → Model Training → Cross-Validation → Hyperparameter Tuning → Final Evaluation → Ensemble Comparison
 
-Dataset source:
-https://www.kaggle.com/datasets/washingtonpost/nfl-arrests
-
-## Methods Used
-The project involved:
-
-- Data cleaning and preprocessing
-- Handling missing and duplicate data
-- Feature engineering (score difference, rivalry indicators, etc.)
-- Exploratory data analysis and visualization
-- Classification model training and comparison
-
-Models evaluated include:
+## Models Compared
 - Logistic Regression
 - Random Forest
-- XGBoost (best performing model)
+- XGBoost (baseline + tuned)
+- Ensemble model
 
-## Results
-Results show that arrest levels can be partially predicted using game context, with factors such as rivalry games, close score margins, and away team wins correlating with higher arrest counts.
+## Final Result
+Tuned XGBoost achieved the best performance (~0.68 accuracy) and handled high-arrest games better than other models.
 
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- scikit-learn
-- XGBoost
-- Jupyter Notebook
-- Matplotlib / Seaborn
+## Key Findings
+- Rivalry games increase arrest risk
+- Close games lead to more incidents
+- Away team wins correlate with higher arrests
+- Certain stadiums consistently show higher arrest counts
 
-## Repository Contents
-- Jupyter Notebook containing full analysis and modeling workflow
-- Project presentation slides
-- Supporting scripts and files
+## How to Run
+```bash
+pip install -r requirements.txt
 
-## Notes
-This repository is maintained as a portfolio project and is not intended for production use. Dataset redistribution may be subject to Kaggle terms of use.
